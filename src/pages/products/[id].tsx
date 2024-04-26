@@ -1,9 +1,5 @@
-const ProductDetailPage = () => {
-  return (
-    <div>
-      <h2>상품상세</h2>
-    </div>
-  );
+const ProductDetail = () => {
+  return <div>ProductDetail</div>;
 };
 
-export default ProductDetailPage;
+export default ProductDetail;
