@@ -1,4 +1,4 @@
-import { Product } from "@/src/types/product";
+import { Product } from "@/types/product";
 
 const ProductDetail = ({ item }: { item: Product }) => {
   const { title, description, price, category, image, rating } = item;

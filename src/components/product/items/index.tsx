@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Product } from "../../../types/product";
+import { Product } from "@/types/product";
 
 const ProductItem = ({ product }: { product: Product }) => {
   const { id, title, price, image, description, category, rating } = product;
