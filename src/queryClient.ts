@@ -1,16 +1,22 @@
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-} from "react-query";
+import { QueryClient } from "react-query";
 type anyObject = {
   [key: string]: any;
 };
 export const getClient = (() => {
   let client: QueryClient | null = null;
   return () => {
-    if (!client) client = new QueryClient({});
+    if (!client)
+      client = new QueryClient({
+        defaultOptions: {
+          queries: {
+            cacheTime: 1000 * 60 * 60 * 24,
+            staleTime: 1000 * 60,
+            refetchOnMount: false,
+            refetchOnReconnect: false,
+            refetchOnWindowFocus: false,
+          },
+        },
+      });
     return client;
   };
 })();
@@ -27,7 +33,7 @@ export const fetcher = async ({
   params?: anyObject;
 }) => {
   try {
-    const url = `${BASE_URL}${path}`;
+    let url = `${BASE_URL}${path}`;
     const fetchOptions: RequestInit = {
       method: method,
       headers: {
@@ -35,6 +41,11 @@ export const fetcher = async ({
         "Access-Control-Allow-Origin": BASE_URL,
       },
     };
+    if (params) {
+      const searchParams = new URLSearchParams(params);
+      url += "?" + searchParams.toString();
+    }
+    if (body) fetchOptions.body = JSON.stringify(body);
     const res = await fetch(url, fetchOptions);
     const result = await res.json();
     return result;
