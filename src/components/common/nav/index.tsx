@@ -1,26 +1,25 @@
-import navlinks from '@/assets/menu';
-import { Link } from 'react-router-dom';
+import navlinks from "@/assets/menu";
+import { Link } from "react-router-dom";
 
 type NavProps = {
-  type: 'toggle' | 'normal';
+  type: "toggle" | "normal";
   onClick?: () => void;
 };
 
 const Nav = ({ type, onClick }: NavProps) => {
-  const defaultStyleString =
-    'dark:text-white dark:hover:text-green-500 text-center transition duration-250 hover:scale-125 hover:text-green-500';
+  const defaultStyleString = "text-[16px] text-center tracking-[-0.05px]";
   return (
     <>
-      {navlinks.map(item => {
+      {navlinks.map((item) => {
         const { title, link } = item;
         return (
           <Link
             to={link}
             key={title}
             className={
-              type === 'normal'
+              type === "normal"
                 ? defaultStyleString
-                : defaultStyleString + ' text-lg py-4'
+                : defaultStyleString + " text-lg py-4"
             }
             onClick={
               onClick
@@ -28,8 +27,7 @@ const Nav = ({ type, onClick }: NavProps) => {
                 : () => {
                     return;
                   }
-            }
-          >
+            }>
             {title}
           </Link>
         );

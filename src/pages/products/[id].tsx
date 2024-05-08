@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import { QueryKeys, fetcher } from "@queryClient/";
+import { QueryKeys, fetcher } from "@/queryClient";
 import { Product } from "@/types/product";
 import { useParams } from "react-router-dom";
 import ProductDetail from "@/components/product/detail";
