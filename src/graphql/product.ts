@@ -14,8 +14,7 @@ export type MutableProduct = Omit<Product, "id" | "createdAt">; // 지정한 타
 export type Products = {
   products: Product[];
 };
-
-const GET_PRODUCTS = gql`
+export const GET_PRODUCTS = gql`
   query GET_PRODUCTS($cursor: ID, $showDeleted: Boolean) {
     products(cursor: $cursor, showDeleted: $showDeleted) {
       id
@@ -94,5 +93,3 @@ export const DELETE_PRODUCT = gql`
     deleteProduct(id: $id)
   }
 `;
-
-export default GET_PRODUCTS;

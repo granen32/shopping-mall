@@ -1,4 +1,4 @@
-import GET_PRODUCTS from "@/graphql/product";
+import { GET_PRODUCTS } from "@/graphql/product";
 import { graphql, HttpResponse } from "msw";
 import { v4 as uuid } from "uuid";
 const mock_products = Array.from({ length: 20 }).map((_, i) => ({
@@ -12,9 +12,7 @@ const mock_products = Array.from({ length: 20 }).map((_, i) => ({
 const handlers = [
   graphql.query(GET_PRODUCTS, () => {
     return HttpResponse.json({
-      data: {
-        products: mock_products,
-      },
+      data: mock_products,
     });
   }),
 ];
