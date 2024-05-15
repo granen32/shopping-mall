@@ -12,9 +12,34 @@ const ProductListPage = () => {
   );
 
   return (
-    <div>
-      <h2>상품 목록</h2>
-      <ul className="p-0 list-none grid grid-cols-3 gap-2.5">
+    <div className="max-w-[1480px] mx-auto pt-[145px]">
+      <div className="hero-txt">
+        <h1 className="heading-1">
+          <span className="y-w block">
+            <span className="y">Opal</span>
+          </span>
+          <span className="y-w block">
+            <span className="y">Media Kit</span>
+          </span>
+        </h1>
+        <p>
+          <span className="y-w block">
+            <span className="y">
+              Get the basic company facts, stories, investors, photos and
+              answers to
+            </span>
+          </span>
+          <span className="y-w block">
+            <span className="y">
+              the most frequently asked questions. All content downloaded may be
+            </span>
+          </span>
+          <span className="y-w block">
+            <span className="y">used for editorial purposes only.</span>
+          </span>
+        </p>
+      </div>
+      <ul className="grid grid-cols-3 gap-x-[20px] gap-y-7.5">
         {data?.map((product) => (
           <ProductItem product={product} key={product.id} />
         ))}

@@ -1,10 +1,7 @@
 const navlinks: { title: string; link: string }[] = [
-  { title: "Home", link: "/" },
   { title: "products", link: "/products" },
-  { title: "products", link: "/products" },
-  { title: "Home", link: "/" },
-  { title: "products", link: "/products" },
-  { title: "products", link: "/products" },
+  { title: "Company", link: "/" },
+  { title: "Resources", link: "/" },
 ];
 
 export default navlinks;
