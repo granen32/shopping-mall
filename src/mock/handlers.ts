@@ -12,9 +12,10 @@ const mock_products = Array.from({ length: 20 }).map((_, i) => ({
 const handlers = [
   graphql.query(GET_PRODUCTS, () => {
     return HttpResponse.json({
-      data: mock_products,
+      data: {
+        products: mock_products,
+      },
     });
   }),
 ];
-
 export default handlers;
