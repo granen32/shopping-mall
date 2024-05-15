@@ -9,7 +9,7 @@ export type Product = {
   createdAt: number;
 };
 
-export type MutableProduct = Omit<Product, "id" | "createdAt">;
+export type MutableProduct = Omit<Product, "id" | "createdAt">; // 지정한 타입을 뺀 나머지 타입.
 
 export type Products = {
   products: Product[];

@@ -9,8 +9,10 @@ const App = () => {
   const queryClient = getClient();
   return (
     <QueryClientProvider client={queryClient}>
-      {elem}
-      <ReactQueryDevtools initialIsOpen={false} />
+      <>
+        {elem}
+        <ReactQueryDevtools initialIsOpen={false} />
+      </>
     </QueryClientProvider>
   );
 };

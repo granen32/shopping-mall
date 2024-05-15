@@ -6,7 +6,7 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <main className="transition duration-500 bg-white dark:bg-[#111111] text-black dark:text-white pt-[15px]">
+      <main className="transition duration-500 bg-white dark:bg-[#111111] text-black dark:text-white">
         <div className="flex flex-col  m-auto">
           <Suspense fallback={"loading..."}>
             <Outlet />

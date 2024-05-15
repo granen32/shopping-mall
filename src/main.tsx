@@ -6,11 +6,19 @@ import "./index.css";
 
 const container = document.getElementById("root");
 const root = createRoot(container!);
-
-root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
-);
+async function enableMocking() {
+  if (!import.meta.env.DEV) {
+    return;
+  }
+  const { worker } = await import("./mock/browser");
+  return worker.start();
+}
+enableMocking().then(() => {
+  root.render(
+    <React.StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </React.StrictMode>
+  );
+});
