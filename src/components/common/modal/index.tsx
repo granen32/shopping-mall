@@ -18,52 +18,51 @@ const Modal = ({
   children,
   className,
 }: ModalProps) => {
-  const onMaskClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      onClose && onClose();
-    }
-  };
-  const close = () => {
-    if (onClose) {
-      onClose();
-    }
-  };
   useEffect(() => {
     if (visible) {
       const scrollY = window.scrollY;
-      document.body.classList.add("fixed", "top-0", "left-0", "right-0");
-      document.body.style.top = `-${scrollY}px`;
+      document.body.style.cssText = `position: fixed; top: -${scrollY}px; left: 0; right: 0;`;
 
       return () => {
-        document.body.classList.remove("fixed", "top-0", "left-0", "right-0");
-        document.body.style.top = "";
+        document.body.style.cssText = "";
         window.scrollTo(0, scrollY);
       };
     }
   }, [visible]);
+  const handleMaskClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget && maskClosable && onClose) {
+      onClose();
+    }
+  };
+
+  const handleCloseClick = () => {
+    if (onClose) {
+      onClose();
+    }
+  };
   return (
     <Portal elementId={className}>
       <div
         className={`modal-overlay ${
           visible ? "block" : "hidden"
-        } fixed inset-0 bg-black bg-opacity-60 z-[50]`}
+        } fixed inset-0 bg-black bg-opacity-60 z-50`}
         aria-label="modal-overlay"
       />
       <div
-        onClick={maskClosable ? onMaskClick : undefined}
+        onClick={handleMaskClick}
         aria-label="modal-wrapper"
         tabIndex={-1}
         className={`modal-wrapper ${
           visible ? "block" : "hidden"
-        } fixed inset-0 z-[100] overflow-auto outline-none  ${className}`}>
+        } fixed inset-0 z-100 overflow-auto outline-none ${className}`}>
         <div
           tabIndex={0}
-          className={`modal-inner px-[50px] box-border py-[10px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-[5px] min-w-[300px]`}>
+          className="modal-inner px-50 box-border py-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-5 min-w-300">
           {closable && (
             <button
-              onClick={close}
-              aria-label="onclose"
-              className="modal-close absolute top-[10px] right-[10px] cursor-pointer flex flex-col items-center text-white text-sm z-50">
+              onClick={handleCloseClick}
+              aria-label="close-modal"
+              className="modal-close absolute top-10 right-10 cursor-pointer flex flex-col items-center text-sm z-50">
               <svg
                 className="fill-current text-black"
                 xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +71,7 @@ const Modal = ({
                 viewBox="0 0 18 18">
                 <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
               </svg>
-              <span className="text-sm text-black">(Esc)</span>
+              <span className="text-black">(Esc)</span>
             </button>
           )}
           {children}
