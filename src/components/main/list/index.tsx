@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import LOGO from "@/assets/img/header/logo.png";
+import LOGO from "@/assets/img/header/logo.svg";
 import MAIN_IMAGE_01 from "@/assets/img/main/main_img_01.jpeg";
 import MAIN_IMAGE_02 from "@/assets/img/main/main_img_02.jpeg";
 const MainList = () => {
@@ -30,7 +30,7 @@ const MainList = () => {
           to=""
           className="md:w-1/2 xl:w-1/3 mx-auto text-center min-h-[416px] md:min-h-[376px] lg:min-h-[552px]  border-b md:border-b-0 border-black/10 md:border-r pt-[46px] md:pt-[51px] lg:pt-[56px]">
           <h3 className="leading-[40px] text-[32px] font-600 lg:leading-[50px] lg:pb-0">
-            EIGENE
+            Granen
           </h3>
 
           <p className="text-[14px] lg:text-[16px] text-opal-grey1 font-500 leading-[24px] pb-[18px] md:pb-[18px] lg:pb-[18px]">

@@ -1,4 +1,4 @@
-import FOOTER_LOGO_IMG from "@/assets/img/footer/logo_footer.png";
+import FOOTER_LOGO_IMG from "@/assets/img/footer/logo_footer.svg";
 import { Link } from "react-router-dom";
 const Footer = () => {
   const scrollToTop = () => {
@@ -15,10 +15,10 @@ const Footer = () => {
             <img src={FOOTER_LOGO_IMG} alt="logo" className="mx-auto" />
           </div>
           <div className="max-w-[1616px] mx-auto mt-[-35px] relative grid grid-cols-12 gap-x-4">
-            <div className="hidden md:block col-span-4 relative border-t border-t-black/10 group-[.is]/theme-dark:border-t-black/20 pt-[41px] ">
+            <div className="hidden md:block col-span-2 relative border-t border-t-black/10 group-[.is]/theme-dark:border-t-black/20 pt-[41px] ">
               <p className="font-600 text-[20px] leading-[28px] mb-[20px] max-w-[254px]">
                 Subscribe to the <br />
-                Eigene Newsletter
+                Granen Newsletter
               </p>
               <p className="text-[13px] leading-[24px] max-w-[247px] mb-[23px]">
                 Latest news, musings, announcements and updates direct to your
@@ -37,7 +37,7 @@ const Footer = () => {
                 </svg>
               </Link>
             </div>
-            <div className="col-span-5 col-start-7 px-2 gap-x-4 border-t border-t-black/10 group-[.is]/theme-dark:border-t-black/20 pt-[37px]">
+            <div className="col-span-8 col-start-4 px-2 gap-x-4 border-t border-t-black/10 group-[.is]/theme-dark:border-t-black/20 pt-[37px]">
               <div>
                 <div className="font-400 text-[13px] text-black/40 mb-[20px]">
                   Products
@@ -50,7 +50,7 @@ const Footer = () => {
                 <Link
                   to=""
                   className="font-medium text-[13px] text-black hover:text-black/50 mb-[9px]">
-                  Eigene ai
+                  Granen ai
                 </Link>
                 <Link
                   to=""
@@ -127,7 +127,7 @@ const Footer = () => {
           <div className="max-w-[1616px] mx-auto md:pt-[64px] grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-x-4 pt-5">
             <div className="relative col-span-4 md:col-span-8 lg:col-span-12 items-center grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 xl:grid-cols-10 gap-x-4 leading-[0]">
               <div className="group-[.is]/theme-dark:border-t-black/20 col-span-4 border-t border-t-black/10  text-[14px] font-medium flex justify-between w-full md:pt-0 h-[65px] md:h-[50px] items-center leading-[1] px-2 md:px-0">
-                <div>EIGENE Camera Inc.</div>
+                <div>Granen Camera Inc.</div>
 
                 <div>All rights reserved.</div>
               </div>

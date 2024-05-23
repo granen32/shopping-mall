@@ -1,20 +1,12 @@
-import { useQuery } from "react-query";
-import { graphqlfetcher, QueryKeys } from "@/queryClient";
-import ProductItem from "@/components/product/items";
-import { GET_PRODUCTS, Products } from "@/graphql/product";
+import ProductList from "@/components/product/list";
 
 const ProductListPage = () => {
-  const { data } = useQuery<Products>(
-    QueryKeys.PRODUCTS,
-    () => graphqlfetcher(GET_PRODUCTS) as Promise<Products>
-  );
-
   return (
-    <div className="max-w-[1480px] mx-auto pt-[145px] w-full">
-      <div className="hero-txt">
+    <div className="max-w-[1480px] mx-auto pt-[145px]">
+      <div className="hero-txt mb-[50px]">
         <h1 className="heading-1">
           <span className="y-w block">
-            <span className="y">Opal</span>
+            <span className="y">Eigene</span>
           </span>
           <span className="y-w block">
             <span className="y">Media Kit</span>
@@ -37,11 +29,7 @@ const ProductListPage = () => {
           </span>
         </p>
       </div>
-      <ul className="grid grid-cols-3 gap-x-[20px] gap-y-7.5">
-        {data?.products?.map((product) => (
-          <ProductItem product={product} key={product.id} />
-        ))}
-      </ul>
+      <ProductList />
     </div>
   );
 };

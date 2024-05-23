@@ -54,15 +54,15 @@ const Modal = ({
         tabIndex={-1}
         className={`modal-wrapper ${
           visible ? "block" : "hidden"
-        } fixed inset-0 z-100 overflow-auto outline-none ${className}`}>
+        } fixed inset-0 z-[100] overflow-auto outline-none ${className}`}>
         <div
           tabIndex={0}
-          className="modal-inner px-50 box-border py-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-5 min-w-300">
+          className="modal-inner px-[50px] box-border py-[35px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-5 min-w-300">
           {closable && (
             <button
               onClick={handleCloseClick}
               aria-label="close-modal"
-              className="modal-close absolute top-10 right-10 cursor-pointer flex flex-col items-center text-sm z-50">
+              className="modal-close absolute top-[45px] right-[12px] cursor-pointer flex flex-col items-center text-sm z-50">
               <svg
                 className="fill-current text-black"
                 xmlns="http://www.w3.org/2000/svg"

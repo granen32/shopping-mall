@@ -15,7 +15,7 @@ const Main = () => {
                     <span className="y">First experience</span>
                   </span>
                   <span className="y-w block">
-                    <span className="y">at Eigene Korea.</span>
+                    <span className="y">at Granen Korea.</span>
                   </span>
                 </p>
                 <button className="hero-button font-400 inline-flex justify-center items-center text-[16px] mt-[15px] h-[40px] px-5 pt-0 rounded-full bg-[#000] text-white">
@@ -27,7 +27,7 @@ const Main = () => {
         </div>
         <picture className="">
           <source srcSet={MAINIMAGE} />
-          <img src={MAINIMAGE} alt="EIGENE MAIN" />
+          <img src={MAINIMAGE} alt="Granen MAIN" />
         </picture>
       </div>
       <MainList />
