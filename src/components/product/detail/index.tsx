@@ -1,8 +1,7 @@
 import Breadcrumb from "@/components/common/breadcrumb";
-import { ProductResponse } from "@/graphql/product";
+import { ProductDeTailResponse } from "@/graphql/product";
 
-const ProductDetail = (product: ProductResponse) => {
-  console.log(product, "item");
+const ProductDetail = (product: ProductDeTailResponse) => {
   const { title, description, imageUrl, price, createdAt, id } =
     product.product;
   return (

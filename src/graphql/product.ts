@@ -9,6 +9,9 @@ export type Product = {
   createdAt: number;
 };
 export type ProductResponse = {
+  product: Product[];
+};
+export type ProductDeTailResponse = {
   product: Product;
 };
 
