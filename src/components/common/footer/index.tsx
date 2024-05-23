@@ -8,7 +8,7 @@ const Footer = () => {
     });
   };
   return (
-    <footer className="bg-white  footer-w footer-w-light border-t-[1px] mt-[20px]">
+    <footer className="bg-white  footer-w footer-w-light border-t-[1px] mt-[50px]">
       <div className="mix-blend-difference invert">
         <div className="px-2">
           <div className="footer relative pt-[31.96px] pb-[24.66px]">
