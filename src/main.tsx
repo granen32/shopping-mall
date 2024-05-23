@@ -4,6 +4,9 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./app";
 import "./index.css";
 
+const modalRoot = document.createElement("div");
+modalRoot.id = "modal-root";
+document.body.appendChild(modalRoot);
 const container = document.getElementById("root");
 const root = createRoot(container!);
 async function enableMocking() {
