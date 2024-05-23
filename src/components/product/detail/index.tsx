@@ -1,7 +1,8 @@
-import { Product } from "@/graphql/product";
+import { ProductResponse } from "@/graphql/product";
 
-const ProductDetail = ({ item }: { item: Product }) => {
-  const { title, description, imageUrl, price, createdAt } = item;
+const ProductDetail = (product: ProductResponse) => {
+  console.log(product, "item");
+  const { title, description, imageUrl, price, createdAt } = product.product;
   return (
     <div>
       <h2>상품 상세</h2>
@@ -10,8 +11,6 @@ const ProductDetail = ({ item }: { item: Product }) => {
       <p>{price}</p>
       <p>{createdAt}</p>
       <img src={imageUrl} alt={title} />
-      {/* <p>{rate}</p>
-      <p>{count}</p> */}
     </div>
   );
 };
