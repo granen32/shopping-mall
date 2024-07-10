@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 // SearchInput
 const SearchInput = () => {
   const [query, setQuery] = useState("");
-  const [debouncedQuery, setDebouncedQuery] = useState(query);
+  const [_, setDebouncedQuery] = useState(query);
 
   const handleSubmit = async (
     event:
