@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "@/components/common/footer";
 import Header from "@/components/common/header";
-const Layout = () => {
+const Layout: () => React.JSX.Element = () => {
   return (
     <>
       <Header />
