@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { Product } from "@/graphql/product";
+import { useCartItem } from "@/recoils/cart";
 
 const ProductItem = ({ product }: { product: Product }) => {
   const { id, title, imageUrl, description } = product;
+  const cart = useCartItem(id);
   return (
     <li className="block rounded-[15px] mb-[25px]">
       <Link to={`/products/${id}`} className="mb-1 block">
@@ -39,6 +41,7 @@ const ProductItem = ({ product }: { product: Product }) => {
           </div>
         </div>
       </Link>
+      <button aria-label="cart">담기</button>
     </li>
   );
 };

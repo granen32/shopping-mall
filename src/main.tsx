@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./app";
 import "./index.css";
+import { RecoilRoot } from "recoil";
 
 const modalRoot = document.createElement("div");
 modalRoot.id = "modal-root";
@@ -19,9 +20,11 @@ async function enableMocking() {
 enableMocking().then(() => {
   root.render(
     <React.StrictMode>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <RecoilRoot>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </RecoilRoot>
     </React.StrictMode>
   );
 });
